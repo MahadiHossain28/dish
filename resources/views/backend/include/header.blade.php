@@ -61,71 +61,51 @@
         <img src="FrontendImage/menu.png" class="menu_icon">{{count(Cart::content())}}</a>
 </div> -->
 <header class="p-3 bg-dark text-white">
-    <div class="headers">
-        <div class="container ">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap" />
-                    </svg>
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+        <ul class="nav mb-md-0 align-items-center">
+            <li>
+                <a href="{{route('index')}}" class="nav-link px-2 text-secondary logo p-0 me-5">
+                    <h1 class=""><b>Ⓓⓘⓢⓗ Ⓒⓐⓣⓔⓡⓘⓝⓖ</b></h1>
                 </a>
+            </li>
+            <li><a href="{{route('index')}}" class="nav-link px-2 text-secondary">Home</a></li>
+            @if(Auth::user())
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
-                    <li><a href="{{('index')}}" class="nav-link px-2 text-secondary">Home</a></li>
-                    @if(Auth::user())
-
-                    @if(Auth::user()->role_id==2)
+                @if(Auth::user()->role_id==2)
                     <a href=" {{route('user_dashboard')}}" class="nav-link px-2 text-white">
-                        UserDashboard</a>
-
-
-
-                    @else
-
+                        UserDashboard
+                    </a>
+                @else
                     <a href="{{route('user_dashboard')}}" class="nav-link px-2 text-white">Dashboard</a>
+                @endif
+                    <a href="{{route('logout')}}" class="nav-link px-2 text-white">Logout</a>
+            @else
+                <li> <a href="{{route('user_login')}}" class="nav-link px-2 text-white">Log-in</a></li>
+            @endif
+
+        </ul>
 
 
-                    @endif
-                    <a href="{{route('logout')}}" class="nav-link px-2 text-white">Logout/a>
-                        @else
-                        <li> <a href="{{route('user_login')}}" class="nav-link px-2 text-white">Log-in</a></li>
-                        @endif
-
-                </ul>
-
-
-                <form class="row" role="search" method="GET" action="{{route('foodmenu')}}">
-                    <div class="col-4 col-lg-auto mb-3 mb-lg-0 me-lg-4 search">
-                        <input type="search" name="search" class="form-control form-control-dark"
-                            placeholder="Search by Category..." value="">
-                        <button class="btn btn-light icon">Search</button>
-                    </div>
-
-                </form>
-
-
-
-                <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2"><a
-                            href="{{route('user_registration')}}">Registration</a></button>
-
-
-
-                    <a href="{{route('cart')}}"
-                        class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none menu_icon">
-
-
-
-                        <img src="FrontendImage/menu.png" alt="image" width="30" height="30"
-                            class="img img-responsive">{{count(Cart::content())}}</a>
-                </div>
-
-
-
+        <form class="row mb-0" role="search" method="GET" action="{{route('foodmenu')}}">
+            <div class="col-12">
+                <input type="search" name="search" class="form-control form-control-dark"
+                    placeholder="Search by Category..." value="">
+                <button class="btn btn-light icon">Search</button>
             </div>
+        </form>
 
 
+
+        <div class="text-end d-flex">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
+{{--                        <li><a href="{{route('user_registration')}}" class="nav-link px-2 text-white">Registration</a></li>--}}
+                <li>
+                    <a href="{{route('cart')}}" class="nav-link px-2 d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none menu_icon">
+                        <img src="FrontendImage/menu.png" alt="image" width="30" height="30" class="img img-responsive">
+                        {{count(Cart::content())}}
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
-
 </header>

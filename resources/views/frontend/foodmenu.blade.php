@@ -121,100 +121,19 @@ h5 {
 <body>
     @include('backend.include.header')
 
-    <!-- <section class="navigation">
-        <div class="nav-container">
-            <div class="brand">
-                <a href="#!">Logo</a>
-            </div>
-            <nav>
-                <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                <ul class="nav-list">
-                    <li>
-                        <a href="#!">Home</a>
-                    </li>
-                    <li>
-                        <a href="#!">About</a>
-                    </li>
-
-                    <li>
-                        <a href="#!">Pricing</a>
-                    </li>
-                    <li>
-                        <a href="#!">Portfolio</a>
-                        <ul class="nav-dropdown">
-                            <li>
-                                <a href="#!">Web Design</a>
-                            </li>
-                            <li>
-                                <a href="#!">Web Development</a>
-                            </li>
-                            <li>
-                                <a href="#!">Graphic Design</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                        </lo>
-
-                    <li> <a class="nav-link" href="{{route('cart')}}"><img src="FrontendImage/menu.png"
-                                class="menu_icon">{{count(Cart::content())}}</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </section> -->
-
 
 
 
     <!-- <a href="{{route('cart')}}"> <img src="FrontendImage/menu.png" class="menu_icon">{{count(Cart::content())}}</a> -->
     <section>
         <div class="container">
-            <div class="d-flex justify-content-between border-bottom mb-3">
-                <div class="col-lg-8">
-                    <div class="form-group">
-                        <select for="category_id" id="category_id" name="category_id" required>
-                            <option value="" selected><b>Select Category:</b></option>
-                            @foreach($category as $cat)
-                            <option value="{{$cat-> id}}">{{$cat-> name}}</option>
-                            @endforeach
-
-                        </select>
-                    </div>
-                    <span class="text-danger"></span>
-                </div>
-                {{-- @foreach($category as $cat)
-                <div class="dropdown"><br>
-                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Categories
-                    </a>
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#" value="{{category->name}}">Rich Food</a></li>
 
 
-                </ul>
-            </div>
-
-            <!-- <h1 class="border-0">Latest Books</h1> -->
-            <!-- <a class="all_books" href="{{ route('foodlist') }}">All Foods <i class="fa fa-arro w-right"></i></a> -->
-
-            @endforeach--}}
-        </div>
-        <br><br><br><br>
-
-
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-3">
 
 
 
             @forelse($food as $foodlist)
-            {{--@if($foodlist->category == $cat->id)--}}
             <div class="col-lg-3 col-md-6 col-sm-12 col-12  mb-3">
 
                 <div class="card" style="width: 17rem;">
@@ -250,7 +169,6 @@ h5 {
                     </div>
                 </div>
             </div>
-            {{--@endif--}}
             @empty
             <!-- <div class="btn btn-outline-light text-light m-2"> -->
             <div class="alert alert-info" role="alert">
@@ -290,12 +208,12 @@ h5 {
 
 
 
-   
+
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2022 Copyright:
         <a class="text-white" href="#">dishcatering.com</a>
     </div>
-  
+
 </footer> -->
 
 

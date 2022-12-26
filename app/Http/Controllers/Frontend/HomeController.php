@@ -33,25 +33,14 @@ class HomeController extends Controller
     {
         $category = category::all();
 
-        //search by category
-        // if ($request->search != null) {
-        //     $cats = category::where('name', 'LIKE', $request->search . '%')->get();
-        //     foreach ($cats as $cat)
-        //         $food = foodlist::where('category', '=', $cat->id)->get();
-        // } else {
-        //     $cats = category::all();
-        //     $food = foodlist::all();
-        // }
-
         //search by foodname
-
-        $food = foodlist::Join('categories', 'foodlists.category_id', '=', 'categories.id')->where('foodlists.name', 'LIKE', $request->search . '%')->Orwhere('categories.name', 'LIKE', $request->search . '%')->get();
-
-        // $food = category::where('name', 'LIKE', $request->search . '%')->get();
-
+        if($request->search != null){
+            $food = foodlist::Join('categories', 'foodlists.category_id', '=', 'categories.id')->where('foodlists.name', 'LIKE', $request->search . '%')->Orwhere('categories.name', 'LIKE', $request->search . '%')->get(['foodlists.*']);
+        }else{
+            $food = foodlist::all();
+        }
 
         return view('frontend.foodmenu', compact('food', 'category'));
-        // return redirect()->back()->with('message', 'Invalid Input');
     }
     // public function search_categorywise(Request $request)
     // {
@@ -73,7 +62,6 @@ class HomeController extends Controller
     {
         $request->validate(
             [
-                'upload' => ['required'],
                 'name' => ['required'],
                 'phone' => ['required'],
                 'email' => ['required', 'unique:users'],
@@ -92,7 +80,7 @@ class HomeController extends Controller
         ]);
 
 
-        return redirect()->route('index')->with('message', 'Registration successful');
+        return redirect()->route('user_login')->with('message', 'Registration successful');
     }
 
 
@@ -107,7 +95,7 @@ class HomeController extends Controller
             $request->session()->regenerate();
 
             if (Auth::user()->role_id == 1) {
-                return redirect()->route('index')->with('message', ' Admin Login successful');
+                return redirect()->route('dashboard')->with('message', ' Admin Login successful');
             } else if (Auth::user()->role_id == 2) {
                 return redirect()->route('index')->with('message', 'Admin Successfully logged-in');
             } else {
