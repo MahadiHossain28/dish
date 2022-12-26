@@ -212,14 +212,12 @@ class HomeController extends Controller
                 'date' => $request->date,
                 'time' => $request->time,
                 'total' =>  $discount_grand_total,
-
-
+                'bkash_number' => $request->bkash_number,
+                'transaction_id' => $request->transaction_id,
             ]);
-
             profitcalculation::create([
                 'order_id' => $order->id
             ]);
-
             foreach ($cart as $data) {
 
                 $suborderlists = sub_orderlist::create([
@@ -244,7 +242,8 @@ class HomeController extends Controller
                 'date' => $request->date,
                 'time' => $request->time,
                 'total' =>  $grand_total,
-
+                'bkash_number' => $request->bkash_number,
+                'transaction_id' => $request->transaction_id,
 
             ]);
 
@@ -276,16 +275,9 @@ class HomeController extends Controller
     }
     public function platteritems($id)
     {
-
-        // $suborderlists = sub_orderlist::all();
-
-
-        // return view('backend.suborderlist', compact('suborderlists'));
         $suborderlists = sub_orderlist::where('order_id', $id)->get();
-        // dd($suborderlists);
-        //$order = orderlist::all()->get();
-
-        return view('frontend.platteritems', compact('suborderlists'));
+        $foods = foodlist::all();
+        return view('frontend.platteritems', compact('suborderlists','foods'));
     }
     public function cart_increment(Request $request)
     {
@@ -323,5 +315,64 @@ class HomeController extends Controller
         ]);
 
         return redirect()->route('user_dashboard');
+    }
+    public function update_qty(Request $request)
+    {
+        $suborder = sub_orderlist::find($request->id);
+        // dd($suborder);
+        $order = orderlist::find($suborder->order_id);
+        $new_price = $order->total - $suborder->sub_total;
+        $sub_total = $request->quantity * $suborder->price;
+        $tax = ($sub_total * 7) / 100;
+        $total = $new_price + $sub_total + $tax + 100;
+
+        // dd($request->all(), $new_price, $sub_total, $tax, $total, $suborder, $order);
+        $suborder->update([
+            'quantity' => $request->quantity,
+            'sub_total' => $sub_total
+        ]);
+        $order->update([
+            'name' => $order->name,
+            'phone' => $order->phone,
+            'address' => $order->address,
+            'date' => $order->date,
+            'time' => $order->time,
+            'total' => $total
+        ]);
+
+        return redirect()->route('user_dashboard');
+    }
+    public function add_more(Request $request)
+    {
+        $fooda=foodlist::where('name',$request->name)->get();
+
+        $suborder = sub_orderlist::find($request->id);
+        // dd($suborder);
+        $order = orderlist::find($suborder->order_id);
+        foreach ($fooda as  $food) {
+            $sub_total = $request->quantity * $food->price;
+        }
+
+        $tax = ($sub_total * 7) / 100;
+        $total = $order->total + $sub_total + $tax + 100;
+
+        // dd($request->all(), $new_price, $sub_total, $tax, $total, $suborder, $order);
+        sub_orderlist::create([
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'order_id'=>$order->id,
+            'quantity' => $request->quantity,
+            'sub_total' => $sub_total
+        ]);
+        $order->update([
+            'name' => $order->name,
+            'phone' => $order->phone,
+            'address' => $order->address,
+            'date' => $order->date,
+            'time' => $order->time,
+            'total' => $total
+        ]);
+
+        return redirect()->back();
     }
 }

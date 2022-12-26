@@ -282,17 +282,18 @@
                                 <label for="time">Time</label>
                                 <input type="time" class="form-control" id="time" name="time" placeholder="Enter Phone" required value="">
                             </div>
+                            <div class="form-group">
+                                <label for="time">Bkash Number</label>
+                                <input type="number" class="form-control" id="time" name="bkash_number" placeholder="Enter number" required value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Transaction ID</label>
+                                <input type="text" class="form-control" id="time" name="transaction_id" placeholder="Enter transaction Id" required value="">
+                            </div>
                             <span class="text-danger"></span>
                         </div>
-                        <div class="dropdown"><br>
-                            <a class="btn btn-dark dropdown-toggle" role="button" id="payment" data-bs-toggle="dropdown" aria-expanded="false" required>
-                                Payment Method
-                            </a>
 
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Cash On Delivery</a></li>
 
-                            </ul>
                         </div>
                         <div class="col-lg-8 text-center">
                             <input type="checkbox" id="check" name="checkbox" value="check">
