@@ -98,6 +98,8 @@ Route::get('/platteritems/{id}', [HomeController::class, 'platteritems'])->name(
 Route::get('/restorecart/{id}', [HomeController::class, 'restorecart'])->name('restorecart');
 Route::post('/cartincrement', [HomeController::class, 'cart_increment'])->name('cart_increment');
 Route::post('/updatequantity', [HomeController::class, 'updatequantity'])->name('updatequantity');
+Route::post('/update_qty', [HomeController::class, 'update_qty'])->name('update_qty');
+Route::post('/add_more', [HomeController::class, 'add_more'])->name('add_more');
 
 
 
