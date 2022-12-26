@@ -31,11 +31,11 @@
     box-sizing: border-box;
 
 }
-h1{ 
+h1{
 	margin: 30px 0 20px 0;
 	font-size:40 px;
 	font-weight:550;
-	text-shadow: 2px 1px 2px black; 
+	text-shadow: 2px 1px 2px black;
     text-decoration-color: blanchedalmond;
     color:#fff;
     /* list-style: none; */
@@ -45,8 +45,8 @@ h1{
     height: 12%;
     display: flex;
     align-items: center;
-  
-    
+
+
 }
 .menu_icon
 {
@@ -91,7 +91,7 @@ font-size: 12px;
 .paragraph
 {
     position:absolute;
-    top:60%;  
+    top:60%;
 }
 h2{
     color:#fff;
@@ -138,7 +138,7 @@ button
 } */
 /* .footer {
     font-size: 18px;
-    line-height:1px; 
+    line-height:1px;
 text-align: center;
 padding: 3px;
 background-color:rgba(241, 226, 226, 0.2);
@@ -150,27 +150,27 @@ background-color:rgba(241, 226, 226, 0.2);
     --second-text-color: #bbbec5;
     --second-bg-color: #c1efde;
   }
-  
+
   .primary-text {
     color: var(--main-text-color);
   }
-  
+
   .second-text {
     color: var(--second-text-color);
   }
-  
+
   .primary-bg {
     background-color: var(--main-bg-color);
   }
-  
+
   .secondary-bg {
     background-color: var(--second-bg-color);
   }
-  
+
   .rounded-full {
     border-radius: 100%;
   }
-  
+
   #wrapper {
     overflow-x: hidden;
     background-image: linear-gradient(
@@ -182,7 +182,7 @@ background-color:rgba(241, 226, 226, 0.2);
       #ddfaef
     );
   }
-  
+
   #sidebar-wrapper {
     min-height: 100vh;
     margin-left: -15rem;
@@ -191,61 +191,57 @@ background-color:rgba(241, 226, 226, 0.2);
     -o-transition: margin 0.25s ease-out;
     transition: margin 0.25s ease-out;
   }
-  
+
   #sidebar-wrapper .sidebar-heading {
     padding: 0.875rem 1.25rem;
     font-size: 1.2rem;
   }
-  
+
   #sidebar-wrapper .list-group {
     width: 15rem;
   }
-  
+
   #page-content-wrapper {
     min-width: 100vw;
   }
-  
+
   #wrapper.toggled #sidebar-wrapper {
     margin-left: 0;
   }
-  
+
   #menu-toggle {
     cursor: pointer;
   }
-  
+
   .list-group-item {
     border: none;
     padding: 20px 30px;
   }
-  
+
   .list-group-item.active {
     background-color: transparent;
     color: var(--main-text-color);
     font-weight: bold;
     border: none;
   }
-  
+
   @media (min-width: 768px) {
     #sidebar-wrapper {
       margin-left: 0;
     }
-  
+
     #page-content-wrapper {
       min-width: 0;
       width: 100%;
     }
-  
+
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
   } */
-   
+
         </style> -->
-<!-- @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-    @endif -->
+
 <!-- <style>
 
 
@@ -259,90 +255,53 @@ h1 {
 </style> -->
 
 
-<body>
-
-    <div class="body">
-        @include('backend.include.header');
-        <div class="container-fluid">
-            <!-- <div class="img_container">
-            <img src="r3.jpg">
-        </div>* -->
-
-            <!-- <nav>
-
-                <div class="navbar">
-                    <div class="logo">
-                        <h1 class=""><b>Ⓓⓘⓢⓗ Ⓒⓐⓣⓔⓡⓘⓝⓖ</b></h1>
-                    </div>
-
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Platters</a></li>
-                        <li><a href="">Waste_FoodItems</a></li>
-                        {{-- <li><a href="{{route('user_login')}}">Registration</a></li>--}}
-
-
-                        @if(Auth::user())
-                        <li><a href=" {{route('user_dashboard')}}">
-                                User_Dashboard</a>
-                        </li>
-                        {{--<li><a href="{{route('logout')}}">Logout</a></li>--}}
-                        @else
-                        <li><a href="{{route('user_login')}}">Login</a></li>
-                        @endif
-                        <li><a href="{{route('cart')}}">
-                                <img src="FrontendImage/menu.png" class="menu_icon">{{count(Cart::content())}}</a></li>
-                    </ul>
-
-                </div>
-            </nav> -->
+<body style="overflow-x: hidden;">
+    @include('backend.include.header')
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
         </div>
-    </div>
-    <section>
-        <div class="row">
-            <div class="col-lg-3">
-                <h2 class="head">Our Services</h2>
-                <p class="paragraph"><b> Different cuisin holds different culture,disguised in taste<br>
+    @endif
+    <section class="body">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-lg-4 d-flex justify-content-center">
+                <div class="text-white">
+                    <h5>Corporate Catering</h5>
+                    <p>From made-to-order foods to flawless service, we are the expert in making your next
+                        corporate
+                        event –small or large – a delicious success.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-8 d-flex justify-content-center">
+                <div class="card card1">
+                    <h5>Private Catering</h5>
+                    <p>Life is full of occasions and celebrations. Scrumptious food makes these events
+                        long-lasting.
+                        YES, we proudly deliver super delicious food and fabulous service.</p>
+                </div>
+                <div class="card card2">
+                    <h5>Corporate Catering</h5>
+                    <p>From made-to-order foods to flawless service, we are the expert in making your next
+                        corporate
+                        event –
+                        small or large – a delicious success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mt-3">
+        <div class="d-flex justify-content-center ">
+            <div class="text-center">
+                <h2 class="text-dark">Our Services</h2>
+                <p class="text-dark"><b> Different cuisin holds different culture,disguised in taste<br>
                         Explore our authenticate services</b>
                 </p>
-                <!-- <button type="button">Explore</button> -->
+                <a href="{{route('foodmenu')}}" class="btn btn-dark" type="button">Explore</a>
             </div>
         </div>
         <div class="col1">
-            <div class="row">
 
-                <!-- <div class="col-lg-3">
-
-
-                        <div class="card">
-                            <h5>Corporate Catering</h5>
-                            <p>From made-to-order foods to flawless service, we are the expert in making your next
-                                corporate
-                                event –small or large – a delicious success.</p>
-                        </div>
-                    </div> -->
-
-                <!-- <div class="col-lg-3">
-                        <div class="card card1">
-                            <h5>Private Catering</h5>
-                            <p>Life is full of occasions and celebrations. Scrumptious food makes these events
-                                long-lasting.
-                                YES, we proudly deliver super delicious food and fabulous service.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="card card2">
-                            <h5>Corporate Catering</h5>
-                            <p>From made-to-order foods to flawless service, we are the expert in making your next
-                                corporate
-                                event –
-                                small or large – a delicious success.</p>
-                        </div>
-                    </div> -->
-
-
-
-            </div>
         </div>
     </section>
 

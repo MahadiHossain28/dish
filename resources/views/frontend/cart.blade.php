@@ -3,97 +3,17 @@
 
 <head>
     <title>Cart</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
-    <link href=" https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/dc.css">
+    <link rel="stylesheet" href="CSS/header.css">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <!-- <link rel="stylesheet" href="CSS/style.css"> -->
-
-    <!-- <link rel="stylesheet" href="CSS/dc.css" /> -->
-    <link rel="stylesheet" href="CSS/cart.css" />
-    <link rel="stylesheet" href="CSS/form.css" />
-    <link rel="stylesheet" href="CSS/header.css" />
 </head>
-<style>
-    h6 {
-        color: black;
-    }
-
-    /* a {
-    text-decoration-color: wheat;
-} */
-
-    /* .menu_icon {
-    width: 2rem;
-    cursor: pointer;
-    margin-left: -80px;
-    padding: 2%;
-
-} */
-
-    .img_container {
-        height: 100px;
-        width: 200px;
-    }
-
-    .img_container img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-
-
-    body {
-        color: #FFFFFF;
-    }
-
-    h1 {
-        text-align: center;
-        color: white;
-        background: rgba(0, 0, 0, 0.5);
-        padding: 20px;
-
-    }
-
-    h4 {
-        color: black;
-    }
-
-    .form {
-
-        margin-top: 39rem;
-        margin-left: -43rem;
-        padding-left: -35rem;
-        padding-right: -5rem;
-
-
-    }
-
-    .cardform {
-
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 30rem;
-        margin-left: 17rem;
-        margin: auto;
-        text-align: center;
-
-
-
-
-    }
-
-    /* .size {
-    width: 65%;
-} */
-
-    .text {
-        color: black
-    }
-</style>
-
+<body>
 @include('backend.include.header');
 @if(session()->has('message'))
 <div class="alert alert-danger">
@@ -165,15 +85,9 @@
                                                 <form action=""></form>
                                                 <form action="{{route('cart_increment')}}" method="post">
                                                     @csrf
-                                                    <!-- <button
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                    class="minus"></button> -->
                                                     <input type="hidden" name="rowid" value="{{$data->rowId}}">
                                                     <input class="quantity" min="20" max="500" name="quantity" value="{{$data->qty}}" type="number" id="quantity">
-                                                    <!-- <button
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                    class="plus"></button> -->
-                                                    <button type="submit" class="cart_btn">Reset Quantity</button>
+                                                    <button type="submit" class="btn btn-dark">Reset Quantity</button>
                                                 </form>
                                             </span>
 
@@ -230,7 +144,7 @@
                             </tr>
                         </table>
                         <div class="text-right">
-                            <a href="{{ route('foodmenu') }}" class="cart_btn mr-3">Go
+                            <a href="{{ route('foodmenu') }}" class="btn btn-dark">Go
                                 Back</a>
 
                         </div>
@@ -295,17 +209,16 @@
 
 
                         </div>
-                        <div class="col-lg-8 text-center">
-                            <input type="checkbox" id="check" name="checkbox" value="check">
-                            <label for="checkbox"><b> You can change the quantity 3 days before the event</b></label>
+                        <div class="col-lg-4 text-right mt-3">
+                            <button type="submit" class="btn btn-dark">Submit</button>
                         </div>
-                        <div class="col-lg-8 text-right">
-
-                            <button type="submit" class="cart_btn">Submit</button>
+                        <div class="col-lg-8 mt-3">
+                            <ul>
+                                <li><b> You can change the quantity 3 days before the event</b></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
         </form>
     </div>
 </div>

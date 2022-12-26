@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" /> -->
 
     <!-- <link rel="stylesheet" href="CSS/dc.css"> -->
-    <link rel="stylesheet" href="CSS/header.css">
+{{--    <link rel="stylesheet" href="CSS/header.css">--}}
 
 
     <title>Food List</title>
@@ -37,22 +37,7 @@
 </style>
 <body>
     @include('backend.include.header')
-    <section>
-        <div class="container">
-            <div class="d-flex justify-content-between border-bottom mb-3">
-                <div class="col-lg-8">
-                    <div class="form-group">
-                        <select for="category_id" id="category_id" name="category_id" required>
-                            <option value="" selected><b>Select Category:</b></option>
-                            @foreach($category as $cat)
-                            <option value="{{$cat-> id}}">{{$cat-> name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <span class="text-danger"></span>
-                </div>
-            </div>
-            <br><br><br><br>
+    <section class="mt-3">
             <div class="row justify-content-center">
                 @forelse($food as $foodlist)
                 <div class="col-lg-3 col-md-6 col-sm-12 col-12  mb-3">
