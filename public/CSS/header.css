@@ -1,0 +1,63 @@
+.menu_icon
+{
+    width: 7%;
+    cursor: pointer;
+    margin-left: 5rem;
+    padding: 2%;
+
+}
+/* .navbar
+{
+ display:flex;
+ justify-content: flex-end;
+  background-color: beige;
+  padding: -2rem;
+}
+.navbar a{
+  text-decoration: none;
+  padding: 20px;
+  color:black;
+  margin-left: -2rem;
+  margin-top:2ren;
+  margin-right: 1rem;
+}
+.logo
+{
+	width:22%;
+	 text-align:center;
+	  
+}
+.navbar a:hover{
+  background-color:grey;
+
+}
+@media screen and (max-width:600px)
+{
+  .navbar{
+    flex-direction: column;
+  }
+  .navbar a 
+  {
+    background-color: black;
+    margin:10px 0;
+    text-align: center;
+    border-radius: 10px;
+  }
+} */
+.search {
+
+  /* margin-top: 1rem; */
+  margin-right: 5rem;
+ 
+}
+.icon {
+
+  margin-top: -2.4rem;
+  width: 5rem;
+  margin-left: 20rem;
+ 
+}
+.headers
+{
+  padding-right: 8rem;
+}
