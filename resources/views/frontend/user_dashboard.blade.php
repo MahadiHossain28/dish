@@ -47,9 +47,9 @@
 
 
 <body>
-    @include('backend.include.header');
+    @include('backend.include.header')
     <div class="form">
-        <div class="cardform">
+        <div class="cardform py-3">
             <div class="w3-card-4 w3-light-grey  top ">
 
                 <p class="title">
@@ -57,9 +57,6 @@
                 </p>
 
             </div>
-
-
-
             @if($users)
             <div class="col-md-12 border-right">
                 <div class="d-flex flex-column align-items-center text-center">
@@ -75,43 +72,10 @@
                 <a class="btn btn-primary" href="{{route('update_user', $users->id)}}" role="button"><i
                         class="fa-solid fa-pen-nib"></i>Edit User Profile</a>
                 <!-- </div> -->
-
-            </div><br><br>
             @endif
-
-
-
-
-
-
-
-
-
-
-            <div class=" w3-card-4 w3-light-grey top ">
-
-                <p class="title">
-                <h5>.....</h5>
-                </p>
-
-            </div>
         </div>
     </div>
     <div class="container rounded bg-transparent py-3">
-        <!-- <div class="row">
-          
-            <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center">
-
-                </div>
-                <div class="d-flex flex-column aligh-items-center text-center">
-                    
-                            class="fa-solid fa-pen-nib"></i>Edit User Profile</a>
-                </div>
-
-            </div><br><br>
-            
-        </div> -->
         @if(Auth::user())
         <div class="container">
 

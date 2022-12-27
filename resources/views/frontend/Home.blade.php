@@ -300,8 +300,16 @@ h1 {
                 <a href="{{route('foodmenu')}}" class="btn btn-dark" type="button">Explore</a>
             </div>
         </div>
-        <div class="col1">
-
+    </section>
+    <section class="container mt-3">
+        <div class="d-flex justify-content-center ">
+            <div class="text-center">
+                <h2 class="text-dark">Wasted Food</h2>
+                <p class="text-dark"><b> Different cuisin holds different culture,disguised in taste<br>
+                        Explore our authenticate services</b>
+                </p>
+                <a href="{{route('foodmenu')}}" class="btn btn-dark" type="button">Explore</a>
+            </div>
         </div>
     </section>
 

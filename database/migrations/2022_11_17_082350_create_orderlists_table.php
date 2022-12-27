@@ -22,8 +22,9 @@ return new class extends Migration
             $table->string('event');
             $table->string('date');
             $table->string('time');
-
             $table->string('total');
+            $table->string('bkash_number');
+            $table->string('transaction_id');
             $table->timestamps();
         });
     }

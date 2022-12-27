@@ -18,8 +18,6 @@
 <body>
 
     <div class="body">
-
-
         @include('backend.include.header');
         <form action="{{route('edit_dashboard', $customer->id)}}" method="POST">
             @csrf
@@ -115,7 +113,7 @@
                 value="{{$customer->password}}"><br><br>
 
 
-          
+
             <br><br>
 
             <button type="submit" name="submit" id="sub" value="submit"

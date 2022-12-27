@@ -149,49 +149,43 @@
 
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-3 pe-0">
                         <div class="col-lg-12">
                             <center>
                                 <h5>Order Form</h5>
                             </center>
-                            <div class="col-lg-8">
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required value="">
-                                </div>
-                                <span class="text-danger"></span>
-                            </div>
                         </div>
+                        <div class="col-lg-7">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required value="">
+                            </div>
+                            <span class="text-danger"></span>
 
-                        <div class="col-lg-8">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
                                 <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Phone" required value="">
                             </div>
                             <span class="text-danger"></span>
-                        </div>
-                        <div class="col-lg-8">
+
                             <div class="form-group">
                                 <label for="address">Address</label>
                                 <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" required value="">
                             </div>
                             <span class="text-danger"></span>
-                        </div>
-                        <div class="col-lg-8">
+
                             <div class="form-group">
                                 <label for="event">Event Name</label>
                                 <input type="text" class="form-control" id="event" name="event" placeholder="Enter your event's name" required value="">
                             </div>
                             <span class="text-danger"></span>
-                        </div>
-                        <div class="col-lg-8">
+
                             <div class="form-group">
                                 <label for="date">Date</label>
-                                <input type="date" class="form-control" id="date" min="{{date('Y-m-d')}}" name="date" placeholder="Enter Phone" required value="">
+                                <input type="date" class="form-control" id="date" min="{{\Carbon\Carbon::now()->addDays(3)->format('Y-m-d')}}" name="date" placeholder="Enter Phone" required value="">
                             </div>
                             <span class="text-danger"></span>
-                        </div>
-                        <div class="col-lg-8">
+
                             <div class="form-group">
                                 <label for="time">Time</label>
                                 <input type="time" class="form-control" id="time" name="time" placeholder="Enter Phone" required value="">
@@ -205,17 +199,46 @@
                                 <input type="text" class="form-control" id="time" name="transaction_id" placeholder="Enter transaction Id" required value="">
                             </div>
                             <span class="text-danger"></span>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button type="submit" class="btn btn-dark text-right">Submit</button>
+
+                                <ul class="text-end">
+                                    <li><b> You can change the quantity 3 days before the event</b></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="border text-center">
+                                <h5>Pay With Bkash</h5>
+                                <img src="" alt="Bkash-Barcode">
+                                <div class="mt-3">
+                                    <h6><b>*২৪৭# ব্যবহার করে সেন্ড মানি করার নিয়ম</b></h6>
+                                    <ul class="my-3">
+                                        <li class="text-start">*২৪৭# ডায়াল করে বিকাশ মোবাইল মেন্যুতে প্রবেশ করুন</li>
+                                        <li class="text-start">“Send Money” করতে 1 লিখে রিপ্লাই করুন</li>
+                                        <li class="text-start">যে বিকাশ নাম্বারে টাকা পাঠাতে চান, সে বিকাশ নাম্বারটি প্রদান করুন</li>
+                                        <li class="text-start">যকত টাকা সেন্ড মানি করতে চান তার পরিমাণ অংকে লিখুন</li>
+                                        <li class="text-start">কত টাকা সেন্ড মানি করতে চান তার পরিমাণ অংকে লিখুন</li>
+                                        <li class="text-start">এরপর রেফারেন্স হিসেবে যেকোনো একটি বার্তা প্রদান করুন (ঐচ্ছিক)</li>
+                                        <li class="text-start">আপনার বিকাশ পিন প্রদান করে সেন্ড মানি’র প্রক্রিয়া সম্পন্ন করুন</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-3">
+                                    <h6><b>বিকাশ অ্যাপ ব্যবহার করে সেন্ড মানি করার নিয়ম</b></h6>
+                                    <ul class="my-3">
+                                        <li class="text-start">বিকাশ অ্যাপে বিকাশ পিন প্রদান করে প্রবেশ করুন</li>
+                                        <li class="text-start">“Send Money / সেন্ড মানি” অপশনে ট্যাপ করুন</li>
+                                        <li class="text-start">যে নাম্বারে সেন্ড মানি করবেন, সে নাম্বারটি সিলেক্ট বা টাইপ করুন</li>
+                                        <li class="text-start">এরপর কত টাকা সেন্ড মানি করতে চান তার পরিমাণ লিখুন</li>
+                                        <li class="text-start">এরপর Reference অপশনের নিচে কোনো নোট লিখতে চাইলে তা লিখুন</li>
+                                        <li class="text-start">বিকাশ পিন নাম্বার প্রদান করে এগিয়ে যান</li>
+                                        <li class="text-start">এরপর ট্যাপ করে রেখে সেন্ড মানি কনফার্ম করুন</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
 
-                        </div>
-                        <div class="col-lg-4 text-right mt-3">
-                            <button type="submit" class="btn btn-dark">Submit</button>
-                        </div>
-                        <div class="col-lg-8 mt-3">
-                            <ul>
-                                <li><b> You can change the quantity 3 days before the event</b></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -225,27 +248,9 @@
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-<!-- @push('custom_script')
-<script>
-$(document).ready(function() {
-    $(document).on('change', '.quantity', function() {
-        var i = 1;
-        var i = $(this).val();
-        var qty = $('#quantity' + i).val();
-        var price = $('#price' + i).val();
-        var total = price * quantity;
-        $('#total' + i).val(total);
-        total();
 
-
-    });
-
-});
-</script>
-@endpush -->
 </body>
 
 </html>

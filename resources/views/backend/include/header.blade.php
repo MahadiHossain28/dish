@@ -87,10 +87,10 @@
 
 
         <form class="row mb-0" role="search" method="GET" action="{{route('foodmenu')}}">
-            <div class="col-12">
+            <div class="col-12 d-flex">
                 <input type="search" name="search" class="form-control form-control-dark"
                     placeholder="Search by Category..." value="">
-                <button class="btn btn-light icon">Search</button>
+                <button class="btn btn-light">Search</button>
             </div>
         </form>
 
@@ -98,12 +98,19 @@
 
         <div class="text-end d-flex">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 ">
-{{--                        <li><a href="{{route('user_registration')}}" class="nav-link px-2 text-white">Registration</a></li>--}}
                 <li>
+                    @if(auth()->user())
                     <a href="{{route('cart')}}" class="nav-link px-2 d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none menu_icon">
-                        <img src="FrontendImage/menu.png" alt="image" width="30" height="30" class="img img-responsive">
+                        <img src="{{asset('FrontendImage/menu.png')}}" alt="image" width="30" height="30" class="img img-responsive">
                         {{count(Cart::content())}}
                     </a>
+                    @else
+                    <a href="{{route('index')}}" class="nav-link px-2 d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none menu_icon">
+                        <img src="{{asset('FrontendImage/menu.png')}}" alt="image" width="30" height="30" class="img img-responsive">
+                        {{count(Cart::content())}}
+                    </a>
+                    @endif
+
                 </li>
             </ul>
         </div>
