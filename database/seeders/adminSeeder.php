@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\barcode;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -33,6 +34,9 @@ class adminSeeder extends Seeder
             'address' => 'Dhaka',
             'phone' => '0111',
             'role_id' => 3,
+        ]);
+        barcode::create([
+            'number'=> '12345678912'
         ]);
     }
 }

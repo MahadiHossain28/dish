@@ -210,13 +210,13 @@
                         <div class="col-lg-5">
                             <div class="border text-center">
                                 <h5>Pay With Bkash</h5>
-                                <img src="" alt="Bkash-Barcode">
+                                <img src="{{asset('uploads/barcode/'.$bar->bar)}}" alt="Bkash-Barcode" width="150px" height="150px">
                                 <div class="mt-3">
                                     <h6><b>*২৪৭# ব্যবহার করে সেন্ড মানি করার নিয়ম</b></h6>
                                     <ul class="my-3">
                                         <li class="text-start">*২৪৭# ডায়াল করে বিকাশ মোবাইল মেন্যুতে প্রবেশ করুন</li>
                                         <li class="text-start">“Send Money” করতে 1 লিখে রিপ্লাই করুন</li>
-                                        <li class="text-start">যে বিকাশ নাম্বারে টাকা পাঠাতে চান, সে বিকাশ নাম্বারটি প্রদান করুন</li>
+                                        <li class="text-start"><b>{{$bar->number}}</b> , এই বিকাশ নাম্বারটি প্রদান করুন</li>
                                         <li class="text-start">যকত টাকা সেন্ড মানি করতে চান তার পরিমাণ অংকে লিখুন</li>
                                         <li class="text-start">কত টাকা সেন্ড মানি করতে চান তার পরিমাণ অংকে লিখুন</li>
                                         <li class="text-start">এরপর রেফারেন্স হিসেবে যেকোনো একটি বার্তা প্রদান করুন (ঐচ্ছিক)</li>
@@ -228,7 +228,7 @@
                                     <ul class="my-3">
                                         <li class="text-start">বিকাশ অ্যাপে বিকাশ পিন প্রদান করে প্রবেশ করুন</li>
                                         <li class="text-start">“Send Money / সেন্ড মানি” অপশনে ট্যাপ করুন</li>
-                                        <li class="text-start">যে নাম্বারে সেন্ড মানি করবেন, সে নাম্বারটি সিলেক্ট বা টাইপ করুন</li>
+                                        <li class="text-start"><b>{{$bar->number}}</b> , এই নাম্বারটি সিলেক্ট বা টাইপ করুন</li>
                                         <li class="text-start">এরপর কত টাকা সেন্ড মানি করতে চান তার পরিমাণ লিখুন</li>
                                         <li class="text-start">এরপর Reference অপশনের নিচে কোনো নোট লিখতে চাইলে তা লিখুন</li>
                                         <li class="text-start">বিকাশ পিন নাম্বার প্রদান করে এগিয়ে যান</li>

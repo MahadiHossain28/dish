@@ -11,7 +11,7 @@
             <a href="{{route('category')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-chart-line me-2"></i>Category List</a>
             <a href="{{route('foodlist')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-shopping-cart me-2"></i>Food List</a>
             <a href="{{route('add_wastedfooditems')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fa fa-trash me-2"></i>Wasted Food </a>
-            <a href="{{route('add_wastedfooditems')}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fa fa-trash me-2"></i>Bar Code </a>
+            <a href="{{route('barcode',1)}}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fa fa-trash me-2"></i>Bar Code </a>
         </div>
     </div>
 </div>

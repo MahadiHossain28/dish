@@ -29,6 +29,10 @@ Route::get('/suborderlist', [AdminController::class, 'suborderlist'])->name('sub
 Route::get('/delete_order/{id}', [AdminController::class, 'delete_order'])->name('delete_order');
 
 
+Route::get('/barcode/{id}', [AdminController::class, 'barcode'])->name('barcode');
+Route::put('/update_barcode/{id}', [AdminController::class, 'update_barcode'])->name('update_barcode');
+
+
 
 Route::get('/profitcalculation/{id}', [AdminController::class, 'profit_calculation'])->name('profit_calculation');
 Route::post('/add_profitcalculation', [AdminController::class, 'add_profitcalculation'])->name('add_profitcalculation');
@@ -72,13 +76,6 @@ Route::post('/create/wastedfooditems', [AdminController::class, 'store_wastedfoo
 Route::get('/editwastedfooditems/{id}', [AdminController::class, 'edit_wastedfooditems'])->name('edit_wastedfooditems');
 Route::put('/updatewastedfoods', [AdminController::class, 'update_wastedfooditems'])->name('update_wastedfooditems');
 Route::get('/deletewastedfoods/{id}', [AdminController::class, 'delete_wastedfooditems'])->name('delete_wastedfooditems');
-
-
-
-
-
-
-
 
 
 //fooditems

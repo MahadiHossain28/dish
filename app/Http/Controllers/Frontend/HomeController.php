@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\barcode;
 use App\Models\category;
 use App\Models\foodlist;
 use App\Models\orderlist;
@@ -164,7 +165,8 @@ class HomeController extends Controller
     {
 
         $cart = Cart::content();
-        return view('frontend.cart', compact('cart'));
+        $bar = barcode::find(1);
+        return view('frontend.cart', compact('cart','bar'));
     }
     public function addtocart($id)
     {

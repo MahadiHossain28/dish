@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\barcode;
 use App\Models\category;
 use App\Models\foodlist;
 use App\Models\orderlist;
@@ -367,5 +368,30 @@ class AdminController extends Controller
 
         ]);
         return redirect()->back()->with('status', 'Category has been added to the list');
+    }
+
+    public function barcode($id){
+        $bar = barcode::find($id);
+        return view('backend.barcode',compact('bar'));
+    }
+    public function update_barcode(Request $request,$id){
+        $bar = barcode::find($id);
+        $filename = $bar->bar;
+        if ($request->hasFile('image')) {
+            $destination = 'uploads/barcode/' . $bar->bar;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            if ($file->isValid()) {
+                $filename = date('Ymdhms') . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('barcode', $filename);
+            }
+        }
+        $bar->update([
+            'bar'=>$filename,
+            'number' =>$request->num
+        ]);
+        return redirect('/dashboard');
     }
 }
