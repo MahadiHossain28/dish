@@ -344,14 +344,13 @@ class HomeController extends Controller
     }
     public function add_more(Request $request)
     {
-        $fooda=foodlist::where('name',$request->name)->get();
+        $food=foodlist::where('name',$request->name)->first();
 
         $suborder = sub_orderlist::find($request->id);
         // dd($suborder);
         $order = orderlist::find($suborder->order_id);
-        foreach ($fooda as  $food) {
+
             $sub_total = $request->quantity * $food->price;
-        }
 
         $tax = ($sub_total * 7) / 100;
         $total = $order->total + $sub_total + $tax + 100;
@@ -359,7 +358,7 @@ class HomeController extends Controller
         // dd($request->all(), $new_price, $sub_total, $tax, $total, $suborder, $order);
         sub_orderlist::create([
             'name'=>$request->name,
-            'price'=>$request->price,
+            'price'=>$food->price,
             'order_id'=>$order->id,
             'quantity' => $request->quantity,
             'sub_total' => $sub_total

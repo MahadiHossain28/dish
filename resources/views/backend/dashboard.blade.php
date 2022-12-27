@@ -14,8 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('CSS/dashboard.css')}}" type="text/css" />
     <link href="https://getbootstrap.com/docs/5.0/examples/dashboard/dashboard.css" rel="stylesheet">
     <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -67,8 +66,7 @@
                                 <p class="fs-5">Profit</p>
                                 <!-- <p class="fs-5">{{$test}}</p> -->
                             </div>
-                            <i
-                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
@@ -84,78 +82,28 @@
                             <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
-
                 </div>
-
-
                 <canvas class="my-4 w-100" id="myChart" width="900" height="380">
-
                 </canvas>
-
-
-                <!-- <div class="row my-5">
-                <div class="input-group">
-
-                    <label for="start">Starting Date: </label>
-
-                    <input type="date" name="begin" placeholder="dd-mm-yyyy " value="" min="1997-01-01"
-                        max="2030-12-31">
-                    <label for="end">Ending Date: </label>
-                    <input type="date" name="end" placeholder="dd-mm-yyyy " value="" min="1997-01-01" max="2030-12-31">
-
-                    <button type="button" class="btn btn-black">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-                <h3 class="fs-4 mb-3">Orders</h3>
-                <div class="col">
-                    <table class="table bg-white rounded shadow-sm  table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col" width="50">#</th>
-                                <th scope="col">Customer</th>
-                                <th scope="col">Total Packings</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Delivery Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
-                    </table>
-                </div>
-            </div> -->
-
             </div>
         </div>
 
     </div>
     <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
-        integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
-        integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
     </script>
     <script src="https://getbootstrap.com/docs/5.0/examples/dashboard/dashboard.js"></script>
 
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
 
-
-</body>
-
-</html>
-
-<script>
-var el = document.getElementById("wrapper");
-var toggleButton = document.getElementById("menu-toggle");
-
-toggleButton.onclick = function() {
-    el.classList.toggle("toggled");
-};
-</script>
+        toggleButton.onclick = function() {
+            el.classList.toggle("toggled");
+        };
+    </script>
 </body>
 
 </html>
