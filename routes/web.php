@@ -65,7 +65,7 @@ Route::get('/cancel_order/{id}', [HomeController::class, 'cancel_order'])->name(
 
 
 //Waste Fooditems
-Route::get('/wastedfooditems', [AdminController::class, 'wasted_fooditems'])->name('wasted_fooditems');
+
 
 Route::get('/addwastedfooditems', [AdminController::class, 'add_wastedfooditems'])->name('add_wastedfooditems');
 Route::post('/create/wastedfooditems', [AdminController::class, 'store_wastedfoods'])->name('store_wastedfoods');
